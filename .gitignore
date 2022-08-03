@@ -1,0 +1,6 @@
+*.out
+*.log
+*.o
+obj/
+.ccls-cache/
+replit.nix
