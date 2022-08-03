@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define ARRAY_SIZE 10
 
 void my_print(int num)
 {
@@ -7,7 +8,7 @@ void my_print(int num)
 
 void print_array( void (*f) (int), int* array)
 {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
         f(array[i]);
     }
     printf("\n");
@@ -15,7 +16,10 @@ void print_array( void (*f) (int), int* array)
 
 int main()
 {
-    int array[5] = {0,1,2,3,4};
+    int array[ARRAY_SIZE];
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        array[i] = i;
+    }
     print_array(my_print, array);
     return 0;
 }
